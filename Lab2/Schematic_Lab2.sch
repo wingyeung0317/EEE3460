@@ -1,4 +1,4 @@
-*version 9.1 3378743261
+*version 9.1 830559748
 u 189
 V? 6
 HB? 2
@@ -10,6 +10,9 @@ R? 2
 ? 9
 @libraries
 @analysis
+.TRAN 1 0 0 0
++0 1us
++1 8ms
 @targets
 @attributes
 @translators
@@ -23,9 +26,11 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 5569 
+pageloc 1 0 5767 
 @status
-c 124:04:24:16:20:29;1716538829
+c 124:05:07:08:05:17;1717718717
+n 0 124:05:07:08:05:26;1717718726 e 
+s 2832 124:05:07:08:05:26;1717718726 e 
 *page 1 0 970 720 iA
 @ports
 port 19 GND_ANALOG 30 170 h
@@ -54,9 +59,9 @@ a 0 sp 0 0 14 48 hln 100 PART=ABM2
 a 0 a 0:13 0 0 0 hln 100 PKGREF=ABM21
 a 0 ap 0 0 -12 -2 hln 100 REFDES=ABM21
 a 0 u 13 0 14 8 hln 100 EXP1=IF(V(%IN1)==0 & V(%IN2)==0, -0.541,0)
-a 0 u 13 0 14 18 hln 100 EXP2=+IF(V(%IN1)==0 & V(%IN2)==1,-1.307,0
-a 0 u 13 0 14 38 hln 100 EXP4=+IF(V(%IN1)==1 & V(%IN2)==1,+1.307,0
-a 0 u 13 0 14 28 hln 100 EXP3=+IF(V(%IN1)==1 & V(%IN2)==0,+0.541,0
+a 0 u 13 0 14 18 hln 100 EXP2=+IF(V(%IN1)==0 & V(%IN2)==1,-1.307,0)
+a 0 u 13 0 14 38 hln 100 EXP4=+IF(V(%IN1)==1 & V(%IN2)==1,+1.307,0)
+a 0 u 13 0 14 28 hln 100 EXP3=+IF(V(%IN1)==1 & V(%IN2)==0,+0.541,0)
 part 5 VSIN 350 120 h
 a 0 x 0:13 0 0 0 hln 100 PKGREF=Vsin
 a 1 xp 9 0 20 10 hcn 100 REFDES=Vsin
@@ -82,14 +87,6 @@ a 1 u 0 0 0 0 hcn 100 TR=0
 a 1 u 0 0 0 0 hcn 100 TF=0
 a 1 u 0 0 0 0 hcn 100 PER=8m
 a 1 u 0 0 0 0 hcn 100 PW=4m
-part 51 ABM2 140 220 h
-a 0 sp 0 0 14 48 hln 100 PART=ABM2
-a 0 u 13 0 14 8 hln 100 EXP1=IF(V(%IN1)==0 & V(%IN2)==0, -0.541,0)
-a 0 u 13 0 14 18 hln 100 EXP2=+IF(V(%IN1)==0 & V(%IN2)==1,-1.307,0
-a 0 u 13 0 14 38 hln 100 EXP4=+IF(V(%IN1)==1 & V(%IN2)==1,+1.307,0
-a 0 u 13 0 14 28 hln 100 EXP3=+IF(V(%IN1)==1 & V(%IN2)==0,+0.541,0
-a 0 a 0:13 0 0 0 hln 100 PKGREF=ABM23
-a 0 ap 0 0 -12 -2 hln 100 REFDES=ABM23
 part 2 VPULSE 30 80 h
 a 0 x 0:13 0 0 0 hln 100 PKGREF=debit_I
 a 1 xp 9 0 25 10 hcn 100 REFDES=debit_I
@@ -107,27 +104,41 @@ part 54 SUM 400 80 U
 a 0 sp 0 0 16 32 hln 100 PART=SUM
 a 0 a 0:13 0 0 0 hln 100 PKGREF=SUM1
 a 1 ap 0 0 10 2 hln 100 REFDES=SUM1
+part 51 ABM2 140 220 h
+a 0 sp 0 0 14 48 hln 100 PART=ABM2
+a 0 u 13 0 14 8 hln 100 EXP1=IF(V(%IN1)==0 & V(%IN2)==0, -0.541,0)
+a 0 a 0:13 0 0 0 hln 100 PKGREF=ABM23
+a 0 ap 0 0 -12 -2 hln 100 REFDES=ABM23
+a 0 u 13 0 14 28 hln 100 EXP3=+IF(V(%IN1)==1 & V(%IN2)==0,+0.541,0)
+a 0 u 13 0 14 38 hln 100 EXP4=+IF(V(%IN1)==1 & V(%IN2)==1,+1.307,0)
+a 0 u 13 0 14 18 hln 100 EXP2=+IF(V(%IN1)==0 & V(%IN2)==1,-1.307,0)
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
 a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
 a 1 s 13 0 300 95 hrn 100 PAGENO=1
 part 169 nodeMarker 120 80 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=ABM21:IN2
 a 0 a 0 0 4 22 hlb 100 LABEL=4
 part 157 nodeMarker 30 70 h
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=1
 part 183 nodeMarker 370 80 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=5
 part 184 nodeMarker 430 80 h
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=6
 part 185 nodeMarker 380 230 h
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=7
 part 187 nodeMarker 30 250 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=8
 @conn
@@ -209,9 +220,6 @@ j 230 40
 j 30 270
 + p 4 +
 + w 44
-j 140 220
-+ p 51 IN1
-+ w 44
 j 350 310
 + p 6 -
 + w 74
@@ -230,9 +238,6 @@ j 350 240
 j 350 270
 + p 6 +
 + w 78
-j 230 230
-+ p 51 OUT
-+ w 80
 j 340 230
 + p 53 IN2
 + w 80
@@ -268,9 +273,6 @@ j 140 50
 + w 103
 j 120 90
 + w 103
-+ w 103
-j 140 240
-+ p 51 IN2
 + w 103
 j 80 110
 + p 3 +
@@ -308,6 +310,15 @@ j 380 230
 j 30 250
 + p 187 pin1
 + w 44
+j 140 220
++ p 51 IN1
++ w 44
+j 230 230
++ p 51 OUT
++ w 80
+j 140 240
++ p 51 IN2
++ w 103
 @attributes
 a 0 s 0:13 0 0 0 hln 100 PAGETITLE=
 a 0 s 0:13 0 0 0 hln 100 PAGENO=1
